@@ -24,3 +24,11 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
+
+Route::get('/dAdmin', function () {
+    return view('dashboardAdmin');
+});
+
+Route::get('/upload', function () {
+    return view('upload');
+});

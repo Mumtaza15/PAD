@@ -6,9 +6,7 @@
   <link href="https://fonts.googleapis.com/css?family=inter" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   
-  <!-- <link rel="stylesheet" href="style.css"> -->
-
-  <!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
+  <link rel="stylesheet" href="uploadStyle.css">
 
   <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}">
 
@@ -63,69 +61,104 @@
     </nav>
 
 
-	<!-- CONTENT -->
-	<div class="content">
-		<div class="left">
-		</div>
-		<div class="right">
-			<form>
-        <h1 align="center" 
-        style="
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 150%;
-        /* identical to box height, or 48px */
+<div class="title">
+--Project--
+</div>
+
+<div class="wrapper">
+    <div class="form">
+       <div class="inputfield">
+          <label>Project Name</label>
+          <input type="text" class="input">
+       </div>  
+        <div class="inputfield">
+          <label>Description</label>
+          <input type="text" class="input">
+       </div>  
+       <!-- <div class="inputfield">
+          <label>Password</label>
+          <input type="password" class="input">
+       </div>  
+      <div class="inputfield">
+          <label>Confirm Password</label>
+          <input type="password" class="input">
+       </div>  -->
+       <div class="inputfield">
+          <label>Video Link</label>
+          <input type="text" class="input">
+       </div>
         
-        text-align: center;
-        letter-spacing: -0.011em;
-        
-        /* padding-bottom: 8em; */
-        color: #0C003F;">
-        Login
-        <br>
+        <div class="inputfield">
+          <label>Event</label>
+          <div class="custom_select">
+            <select>
+              <option value="">Select</option>
+              <option value="select1">PAD1</option>
+              <option value="select2">PAD2</option>
+            </select>
+          </div>
+       </div> 
+        <div class="inputfield">
+          <label>Dosen Pembimbing</label>
+          <input type="text" class="input">
+       </div> 
+      <div class="inputfield">
+          <label>Category</label>
+          <input type="text" class="input">
+       </div> 
 
-				 <input type="text" placeholder="Username"> 
-				 <input type="text" placeholder="Password">
-         
-         <br>
-
-				 <button type="button" class="btn btn-primary"
-          style="--bs-btn-padding-y: .25rem; 
-          --bs-btn-padding-x: .5rem; 
-          --bs-btn-font-size: .75rem; 
-
-          padding: 12.8219px 64.1096px;
-          gap: 5.34px;
-          
-          width: 173.22px;
-          height: 51.64px;
-          
-          background: #0C003F;
-          border-radius: 8px;
-          font-weight: 500;
-          font-size: 17.0959px;
-          line-height: 150%;
-
-          text-align: center;
-          letter-spacing: -0.011em;
-          ">
-          Login
-        </button>
-        <br>
-        <p>Don’t have an account? <a href="/register" style="color: #15C0A4;">Register Now</a></p>
-        
-        
-			</form>
-		</div>
-	</div>
-  <!-- end content -->
-
-  <!-- footer -->
-  <!-- <footer style="display: flex;">
-    <div class="icon" style="float: left;">
-      <p><img src="logo.png" width="20px" height="20px"> © 2022 TRPL SV UGM </p>
+       <div class="inputfield">
+          <label>Website Link</label>
+          <input type="text" class="input">
+       </div>
     </div>
-  </footer> -->
+</div>	
+      <!-- <div class="inputfield">
+          <label>Address</label>
+          <textarea class="textarea"></textarea>
+       </div> 
+      <div class="inputfield">
+          <label>Postal Code</label>
+          <input type="text" class="input">
+       </div> 
+      <div class="inputfield terms">
+          <label class="check">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <p>Agreed to terms and conditions</p>
+       </div> 
+      <div class="inputfield">
+        <input type="submit" value="Register" class="btn">
+      </div> -->
+
+
+<div class="title">
+--Member--
+</div>
+
+<div class="wrapper">
+    <div class="form">
+       <div class="inputfield">
+          <label>Team Name</label>
+          <input type="text" class="input">
+       </div>  
+        <div class="inputfield">
+          <label>Name</label>
+          <input type="text" class="input">
+       <!-- <div class="inputfield">
+          <label>Website Link</label>
+          <input type="text" class="input">
+       </div> -->
+    </div>
+</div>
+</div>
+<center>
+<button type="button" class="btn btn-success">Accept</button>
+<button type="button" class="btn btn-danger">Decline</button>
+<center>
+    
+<br>
 
     <!-- Footer -->
   <footer class="text-center text-lg-start bg-green text-muted">
