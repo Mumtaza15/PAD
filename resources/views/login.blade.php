@@ -42,7 +42,6 @@
           style="--bs-btn-padding-y: .25rem; 
           --bs-btn-padding-x: .5rem; 
           --bs-btn-font-size: .75rem; 
-
           padding: 8px 32px;
           gap: 5.34px;
           
@@ -52,7 +51,6 @@
           font-weight: 500;
           font-size: 17.0959px;
           line-height: 150%;
-
           text-align: center;
           letter-spacing: -0.011em;
           ">
@@ -93,7 +91,6 @@
           style="--bs-btn-padding-y: .25rem; 
           --bs-btn-padding-x: .5rem; 
           --bs-btn-font-size: .75rem; 
-
           padding: 12.8219px 64.1096px;
           gap: 5.34px;
           
@@ -105,7 +102,6 @@
           font-weight: 500;
           font-size: 17.0959px;
           line-height: 150%;
-
           text-align: center;
           letter-spacing: -0.011em;
           ">

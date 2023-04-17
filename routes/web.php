@@ -32,3 +32,7 @@ Route::get('/dAdmin', function () {
 Route::get('/upload', function () {
     return view('upload');
 });
+
+Route::get('/tes', function () {
+    return view('tes');
+});
