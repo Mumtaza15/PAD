@@ -6,6 +6,7 @@
 @stop
 
 @section('content')
+
 <!-- CONTENT -->
 <div class="wrapper">
       <div class="container-lg main">
