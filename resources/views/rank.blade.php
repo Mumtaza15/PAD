@@ -5,11 +5,16 @@
 <link rel="stylesheet" href="navbar.css">
 @stop
 
+@section('nav')
+    <li><a class="nav-link scrollto" href="/home" >Home</a></li>
+    <li><a class="nav-link scrollto active" href="/rank">Rank</a></li>
+    <li><a class="nav-link scrollto" href="/event">Event</a></li>
+@stop
+
 @section('content')
 
-    <div class="row justify-content-center">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
+    <div class="container d-flex justify-content-center mb-4">
+            <div class="input-group-prepend search-title">
                 <label class="input-group-text" for="inputGroupSelect01">Looking for best projects?</label>
             </div>
             <select class="custom-select" id="inputGroupSelect01">
@@ -23,7 +28,6 @@
                     <i class="fas fa-search"></i>
                 </button>
             </div>
-        </div>
         <!-- <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Pameran Proyek PAD Mahasiswa TRPL 2021
@@ -37,10 +41,10 @@
     </div>
 
     <section>
-        <div class="section-title">
+        <div class="section-title my-4">
             <h2>--Best Project--</h2>
         </div>
-        <table class="table table-bordered">
+        <table class="table table-bordered smooth">
             <thead>
                 <tr>
                 <th scope="col">No</th>
@@ -50,19 +54,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr class="rank1">
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>@mdo</td>
                 </tr>
-                <tr>
+                <tr class="rank2">
                 <th scope="row">2</th>
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>@fat</td>
                 </tr>
-                <tr>
+                <tr class="rank3">
                 <th scope="row">3</th>
                 <td>Larry</td>
                 <td>the Bird</td>

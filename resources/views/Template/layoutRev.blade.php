@@ -22,9 +22,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                 <!-- <li><a class="active" href="#">Home</a></li> -->
-                <li><a class="nav-link scrollto" href="#">Home</a></li>
-                <li><a class="nav-link scrollto" href="#hero">Rank</a></li>
-                <li><a class="nav-link scrollto" href="#about">Event</a></li>
+                @yield('nav')
                 <li>
                     <button type="button" class="btn-login">
                         Login

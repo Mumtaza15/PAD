@@ -1,5 +1,6 @@
 body{
   background: #FAF8F6;
+  padding-top: 4%;
 }
 
 /*--------------------------------------------------------------
@@ -71,6 +72,7 @@ body{
     border-bottom-left-radius: 0%;
     border-top-left-radius: 0%;
     --bs-btn-bg: #0C003F;
+    height: 100%;
     border: none;
   }
 
@@ -217,6 +219,13 @@ hr.vertical-line {
   color: white;
   /* border: solid red; */
   /* position: relative; */
+}
+
+@media (max-width: 991px){
+  .right{
+    padding-inline: 16%;
+  }
+  
 }
 
 .input-box{

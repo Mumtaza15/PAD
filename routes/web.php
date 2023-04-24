@@ -18,15 +18,23 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function () {
-    return view('login');
+    return view('loginRev');
 });
 
 Route::get('/register', function () {
-    return view('register');
+    return view('registerRev');
 });
 
-Route::get('/dAdmin', function () {
-    return view('dashboardAdmin');
+Route::get('/home', function () {
+    return view('homeRev');
+});
+
+Route::get('/rank', function () {
+    return view('rank');
+});
+
+Route::get('/event', function () {
+    return view('event');
 });
 
 Route::get('/upload', function () {
@@ -34,5 +42,5 @@ Route::get('/upload', function () {
 });
 
 Route::get('/tes', function () {
-    return view('homeRev');
+    return view('rank');
 });
