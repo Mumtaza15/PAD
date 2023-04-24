@@ -34,5 +34,5 @@ Route::get('/upload', function () {
 });
 
 Route::get('/tes', function () {
-    return view('tes');
+    return view('homeRev');
 });

@@ -7,47 +7,35 @@
         <title>IniLayout</title>
         <link href="https://fonts.googleapis.com/css?family=inter" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
+        @yield('css')
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     </head>
 
     <body>
-    <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <!-- ======= Header ======= -->
+        <header id="header" class="fixed-top header-inner-pages">
+            <div class="container d-flex align-items-center justify-content-between">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+            <!-- <h1 class="logo"><a href="index.html">Tempo</a></h1> -->
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="index.html" class="logo"><img src="logo.png" alt="" class="img-fluid"></a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                <!-- <li><a class="active" href="#">Home</a></li> -->
+                <li><a class="nav-link scrollto" href="#">Home</a></li>
+                <li><a class="nav-link scrollto" href="#hero">Rank</a></li>
+                <li><a class="nav-link scrollto" href="#about">Event</a></li>
+                <li>
+                    <button type="button" class="btn-login">
+                        Login
+                    </button>
                 </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
             </div>
-        </nav>
+        </header><!-- End Header -->
 
         <!-- start content-->
         @yield('content')
@@ -56,30 +44,34 @@
         <!-- Footer -->
         <footer class="text-center text-lg-start bg-green text-muted">
             <!-- Section: Social media -->
-            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" style="color: white">
-            <!-- Left -->
-            <div class="me-4 d-none d-lg-block">
-                <img src="logo.png" width="60px" height="60px"><br>
-                <span>Teknologi Rekayasa Perangkat Lunak<br>
-                Sekolah Vokasi<br>
-                Universitas Gadjah Mada<br></span>
-            </div>
-            <!-- Left -->
+            <div class="footer-wrapper">
+                <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" style="color: white">
+                <!-- Left -->
+                <div class="me-4 d-none d-lg-block jarak">
+                    <div class="clearfix">
+                    <img class="img-footer" src="logo.png" width="60px" height="60px">
+                    <span>Teknologi Rekayasa Perangkat Lunak<br>
+                    Sekolah Vokasi<br>
+                    Universitas Gadjah Mada<br></span>
+                    </div>
+                </div>
+                <!-- Left -->
 
-            <!-- Right -->
-            <div class="iconz" style="display: flex; align-items: center;">
-                <a href="" class="me-4 link-secondary">
-                <i class="fab fa-facebook fa-3x" style="color: white;"></i>
-                </a>
-                <a href="" class="me-4 link-secondary">
-                <i class="fab fa-twitter fa-3x" style="color: white;"></i>
-                </a>
-                <a href="" class="me-4 link-secondary">
-                <i class="fab fa-instagram fa-3x" style="color: white;"></i>
-                </a>
+                <!-- Right -->
+                <div class="iconz" style="display: flex; align-items: center;">
+                    <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-facebook fa-2x" style="color: white;"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-twitter fa-2x" style="color: white;"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-instagram fa-2x" style="color: white;"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+                </section>
             </div>
-            <!-- Right -->
-            </section>
             <!-- Copyright -->
             <div class="text-center p-4" style="color: white">
             © 2023 Copyright:
@@ -88,6 +80,10 @@
             <!-- Copyright -->
         </footer>
         <!-- Footer -->
+
+        @yield('js')
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>

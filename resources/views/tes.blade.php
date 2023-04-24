@@ -1,8 +1,9 @@
-@extends('Template/layout')
+@extends('Template/layoutRev')
 
 @section('css')
 <link rel="stylesheet" href="register.css">
-<link rel="stylesheet" href="style.css">
+<!-- <link rel="stylesheet" href="style.css"> -->
+<link rel="stylesheet" href="navbar.css">
 @stop
 
 @section('content')
@@ -46,4 +47,8 @@
         </div>
       </div>
     </div>
+@stop
+
+@section('js')
+<!-- <script src="navbar.js"></script> -->
 @stop
