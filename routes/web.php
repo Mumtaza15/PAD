@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('homeRev');
 });
 
 Route::get('/login', function () {
@@ -42,5 +42,5 @@ Route::get('/upload', function () {
 });
 
 Route::get('/tes', function () {
-    return view('rank');
+    return view('detailEvent');
 });

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>IniLayout</title>
+        @yield('title')
         <link href="https://fonts.googleapis.com/css?family=inter" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         @yield('css')
@@ -24,7 +24,7 @@
                 <!-- <li><a class="active" href="#">Home</a></li> -->
                 @yield('nav')
                 <li>
-                    <button type="button" class="btn-login">
+                    <button type="button" class="btn-login" onclick="location.href='login'">
                         Login
                     </button>
                 </li>

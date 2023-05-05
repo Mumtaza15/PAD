@@ -4,7 +4,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>IniLayout</title>
+      <title>Login Page</title>
       <link href="https://fonts.googleapis.com/css?family=inter" rel="stylesheet">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
       <link rel="stylesheet" href="login.css">
@@ -35,10 +35,10 @@
                   <!-- <label for="password">Password</label> -->
                 </div>
                 <div class="button">
-                  <button type="submit" class="submit">Login</button>    
+                  <button type="submit" class="submit" onclick="location.href='home'">Login</button>    
                 </div>
                 <div class="signin">
-                  <span>Don't have an account? <a href="#">Register Now</a></span>
+                  <span>Don't have an account? <a href="register">Register Now</a></span>
                 </div>
 
             </div>

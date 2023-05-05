@@ -1,5 +1,9 @@
 @extends('Template/layoutRev')
 
+@section('title')
+<title>Home Page</title>
+@stop
+
 @section('css')
 <link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="navbar.css">
