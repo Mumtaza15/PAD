@@ -55,7 +55,7 @@
             <!-- <img src="login.png" alt=""> -->
           </div>
 
-          <div class="col-sm-6 right">
+          <div class="col-sm-7 right">
             <!-- <div class="input-box"> -->
               <div class="card-body">
                 <h4 class="card-title">Pameran Proyek PAD Mahasiswa TRPL 2021</h4>
@@ -66,8 +66,8 @@
             <!-- </div> -->
           </div>
 
-        <div class="col-md-2 view">
-            <a href="/home" style="color: #15C0A4; text-style: none">View</a>
+        <div class="col-md-1 viewDetail">
+            <a href="/detailEvent" class="goDetail">View</a>
             <!-- <p>View<a href="/home" style="color: ##15C0A4">website</a>.</p> -->
         </div>
 

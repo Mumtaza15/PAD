@@ -14,14 +14,16 @@
 
 @section('content')
     <br>
-    <div class="d-flex justify-content-center justify-content-lg-between p-4">
-        <button class="float-left">
-            Active
-        </button>
+    <div class="bagTop">
+        <div class="d-flex justify-content-center justify-content-lg-between p-4">
+            <button class="float-left">
+                Active
+            </button>
 
-        <button class="float-right">
-        <p class="card-text"><a><i class="fa fa-share mr-2"></i> Share</a></p>
-        </button>
+            <button class="float-right">
+            <p class="card-text"><a><i class="fa fa-share mr-2"></i> Share</a></p>
+            </button>
+        </div>
     </div>
 
     <div class="container d-flex flex-column text-center">
@@ -45,7 +47,9 @@
             <div class="p-3 card-body">
                 <div class="row"> 
                     <div class="col-md-6">
-                        <h6 class="card-title">PortalBuku</h5>
+                        <a class="card-title" href="/detailProject">
+                            <h6>PortalBuku</h5>
+                        </a>
                         <p class="card-text">By 4One</p>
                     </div>
 

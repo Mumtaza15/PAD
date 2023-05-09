@@ -37,10 +37,22 @@ Route::get('/event', function () {
     return view('event');
 });
 
+Route::get('/detailEvent', function () {
+    return view('detailEvent');
+});
+
+Route::get('/project', function () {
+    return view('project');
+});
+
+Route::get('/detailProject', function () {
+    return view('detailProject');
+});
+
 Route::get('/upload', function () {
     return view('upload');
 });
 
 Route::get('/tes', function () {
-    return view('project');
+    return view('detailProject');
 });

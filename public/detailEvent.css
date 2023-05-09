@@ -2,6 +2,10 @@ body{
     padding-top: 4%;
 }
 
+.bagTop{
+    margin-inline: 6%;
+}
+
 hr.vertical-line {
     border: 0;
     margin: 0;

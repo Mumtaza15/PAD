@@ -183,6 +183,10 @@ hr.vertical-line {
   padding-bottom: 5%;
 }
 
+.card-title{
+  text-decoration: none;
+}
+
 .wrapper{
   background: #FAF8F6;
   padding: 0 20px 0 20px;

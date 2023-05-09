@@ -85,11 +85,22 @@ body{
     /* position: relative; */
   }
 
-  .view{
+  .viewDetail{
+    display: flex;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .goDetail{
+    color: #15C0A4;
+    background: white;
+    text-decoration: none;
     /* position: relative; */
+  }
+
+  .goDetail:hover{
+    color: #0C003F;
   }
 
 @media only screen and (max-width: 768px){
@@ -123,9 +134,5 @@ body{
   background: #15C0A4;
   color: white;
   border-radius: 8%;
-}
-
-.view{
-  color: #15C0A4;
-  background: white;
+  border: none;
 }
