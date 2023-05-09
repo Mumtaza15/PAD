@@ -163,13 +163,23 @@
                 </div>
                 
                 <div class="row mt-2 justify-content-center">
+
                     <div class="card" style="width: 16rem;">
                         <img class="card-img-top" src="register.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h6 class="card-title">Pameran Proyek PAD Mahasiswa TRPL 2021</h5>
-                            <p class="card-text">24 Maret - 25 Maret 2023</p>
+                        <div class="p-3 card-body">
+                            <div class="row"> 
+                                <div class="col-md-6">
+                                    <h6 class="card-title">PortalBuku</h5>
+                                    <p class="card-text">By 4One</p>
+                                </div>
+
+                                <div class="col-md-6 text-end">
+                                    <a id="heart"><span class="like"><i class="fab fa-gratipay"></i><br>Like</span></a></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                     <div class="card" style="width: 16rem;">
                         <img class="card-img-top" src="register.jpg" alt="Card image cap">
                         <div class="card-body">

@@ -11,7 +11,7 @@
 
 @section('nav')
     <li><a class="nav-link scrollto" href="/home" >Home</a></li>
-    <li><a class="nav-link scrollto" href="/rank">Rank</a></li>
+    <li><a class="nav-link scrollto active" href="/rank">Rank</a></li>
     <li><a class="nav-link scrollto" href="/event">Event</a></li>
 @stop
 

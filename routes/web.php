@@ -42,5 +42,5 @@ Route::get('/upload', function () {
 });
 
 Route::get('/tes', function () {
-    return view('detailEvent');
+    return view('project');
 });
