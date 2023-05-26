@@ -53,6 +53,26 @@ Route::get('/upload', function () {
     return view('upload');
 });
 
-Route::get('/tes', function () {
-    return view('detailProject');
+Route::get('/adminEvents', function () {
+    return view('adminEvents');
+});
+
+Route::get('/adminApproval', function () {
+    return view('adminApproval');
+});
+
+Route::get('/adminDashboard', function () {
+    return view('adminDashboard');
+});
+
+Route::get('/adminProjects', function () {
+    return view('adminProjects');
+});
+
+Route::get('/adminUsers', function () {
+    return view('adminUsers');
+});
+
+Route::get('/adminAddEvent', function () {
+    return view('adminAddEvent');
 });

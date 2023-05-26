@@ -57,7 +57,7 @@
 
           <div class="col-sm-7 right">
             <!-- <div class="input-box"> -->
-              <div class="card-body">
+            <div class="card-body">
                 <h4 class="card-title">Pameran Proyek PAD Mahasiswa TRPL 2021</h4>
                 <p class="card-text"><a><i class="fas fa-calendar mr-2"></i>  24 Maret - 25 Maret 2023</a></p>
                 <p class="card-text"><a><i class="fas fa-file mr-2"></i>  10 projects submitted</a></p>
@@ -75,6 +75,62 @@
       </div>
     </div>
     
+    <div class="wrapper">
+      <div class="container-lg main">
+        <div class="row">
+          <div class="col-md-4 img-left">
+            <!-- Ini Foto -->
+            <!-- <img src="login.png" alt=""> -->
+          </div>
+
+          <div class="col-sm-7 right">
+            <!-- <div class="input-box"> -->
+            <div class="card-body">
+                <h4 class="card-title">Pameran Proyek PAD Mahasiswa TRPL 2021</h4>
+                <p class="card-text"><a><i class="fas fa-calendar mr-2"></i>  24 Maret - 25 Maret 2023</a></p>
+                <p class="card-text"><a><i class="fas fa-file mr-2"></i>  10 projects submitted</a></p>
+                <button>Active</button>
+            </div>
+            <!-- </div> -->
+          </div>
+
+        <div class="col-md-1 viewDetail">
+            <a href="/detailEvent" class="goDetail">View</a>
+            <!-- <p>View<a href="/home" style="color: ##15C0A4">website</a>.</p> -->
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="container-lg main">
+        <div class="row">
+          <div class="col-md-4 img-left">
+            <!-- Ini Foto -->
+            <!-- <img src="login.png" alt=""> -->
+          </div>
+
+          <div class="col-sm-7 right">
+            <!-- <div class="input-box"> -->
+            <div class="card-body">
+                <h4 class="card-title">Pameran Proyek PAD Mahasiswa TRPL 2021</h4>
+                <p class="card-text"><a><i class="fas fa-calendar mr-2"></i>  24 Maret - 25 Maret 2023</a></p>
+                <p class="card-text"><a><i class="fas fa-file mr-2"></i>  10 projects submitted</a></p>
+                <button>Active</button>
+            </div>
+            <!-- </div> -->
+          </div>
+
+        <div class="col-md-1 viewDetail">
+            <a href="/detailEvent" class="goDetail">View</a>
+            <!-- <p>View<a href="/home" style="color: ##15C0A4">website</a>.</p> -->
+        </div>
+
+        </div>
+      </div>
+    </div>
+
     <!-- <div class="wrapper">
       <div class="container-lg main">
         <div class="card float-left">

@@ -10,7 +10,7 @@
 @stop
 
 @section('nav')
-    <li><a class="nav-link scrollto active" href="/home" >Home</a></li>
+    <li><a class="nav-link scrollto" href="/home" >Home</a></li>
     <li><a class="nav-link scrollto" href="/rank">Rank</a></li>
     <li><a class="nav-link scrollto" href="/event">Event</a></li>
 @stop
@@ -38,6 +38,12 @@
           <label>Confirm Password</label>
           <input type="password" class="input">
        </div>  -->
+
+      <div class="inputfield">
+          <label>Thumbnail Picture</label>
+          <input type="file" class="form-control" id="customFile" />
+       </div>
+
        <div class="inputfield">
           <label>Video Link</label>
           <input type="text" class="input">
@@ -59,7 +65,14 @@
        </div> 
       <div class="inputfield">
           <label>Category</label>
-          <input type="text" class="input">
+          <div class="custom_select">
+            <select>
+              <option value="">Select</option>
+              <option value="select1">Website</option>
+              <option value="select2">Mobile</option>
+              <option value="select3">Game</option>
+            </select>
+          </div>
        </div> 
 
        <div class="inputfield">
@@ -98,20 +111,36 @@
           <label>Team Name</label>
           <input type="text" class="input">
        </div>  
-        <div class="inputfield">
-          <label>Name</label>
+
+      <div class="inputfield">
+          <label>Name 1</label>
           <input type="text" class="input">
+      </div>
+
+      <div class="inputfield">
+          <label>Role 1</label>
+          <input type="text" class="input">
+      </div>
+
+      <div class="inputfield">
+          <label>Picture 1</label>
+          <input type="file" class="form-control" id="customFile" />
+      </div>
+
        <!-- <div class="inputfield">
           <label>Website Link</label>
           <input type="text" class="input">
        </div> -->
     </div>
 </div>
-</div>
+
 <center>
 <button type="button" class="btn btn-success">Accept</button>
 <button type="button" class="btn btn-danger">Decline</button>
 <center>
+   
+</div>
+
     
 <br>
 
