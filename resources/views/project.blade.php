@@ -65,7 +65,7 @@
 
     <div class="d-flex p-4 jarak-kanan">
         <div class="dropdownMini">
-            <span>Sort by:
+            <span class="span-by">Sort by:
                 <button class="btnSegment btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Most Recent
                 </button>

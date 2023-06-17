@@ -53,11 +53,6 @@ Route::get('/detailProject', function () {
 Route::get('/upload', [ProjectController::class, 'create']);
 Route::post('/upload', [ProjectController::class, 'store'])->name('upload.store');
 
-Route::get('/tes', function () {
-    return view('detailProject');
-});
-
-
 Route::get('/login/google', [LoginController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
@@ -65,3 +60,27 @@ Route::get('login/google/callback', [LoginController::class, 'handleGoogleCallba
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/adminEvents', function () {
+    return view('adminEvents');
+});
+
+Route::get('/adminApproval', function () {
+    return view('adminApproval');
+});
+
+Route::get('/adminDashboard', function () {
+    return view('adminDashboard');
+});
+
+Route::get('/adminProjects', function () {
+    return view('adminProjects');
+});
+
+Route::get('/adminUsers', function () {
+    return view('adminUsers');
+});
+
+Route::get('/adminAddEvent', function () {
+    return view('adminAddEvent');
+});
