@@ -80,53 +80,24 @@
 
     <div class="row mt-2 justify-content-center">
 
+    @foreach ($projects as $project)
     <div class="card" style="width: 23rem;">
-        <img class="card-img-top" src="register.jpg" alt="Card image cap">
+        <img class="card-img-top" src="{{ asset('storage/' . $project->project_picture1) }}" alt="Card image cap">
         <div class="p-3 card-body">
             <div class="row"> 
                 <div class="col-md-6">
-                    <h6 class="card-title">PortalBuku</h5>
-                    <p class="card-text">By 4One</p>
+                    <h6 class="card-title">{{ $project->project_name }}</h5>
+                    <p class="card-text">{{ $project->team_name }}</p>
                 </div>
 
                 <div class="col-md-6 text-end">
-                    <a id="heart"><span class="like"><i class="fab fa-gratipay"></i><br>Like</span></a></p>
+                    <a id="heart"><span class="like"><i class="fab fa-gratipay"></i><br>{{ $project->votes }}</span></a></p>
                 </div>
             </div>
         </div>
     </div>
+    @endforeach
 
-    <div class="card" style="width: 23rem;">
-        <img class="card-img-top" src="register.jpg" alt="Card image cap">
-        <div class="p-3 card-body">
-            <div class="row"> 
-                <div class="col-md-6">
-                    <h6 class="card-title">PortalBuku</h5>
-                    <p class="card-text">By 4One</p>
-                </div>
-
-                <div class="col-md-6 text-end">
-                    <a id="heart"><span class="like"><i class="fab fa-gratipay"></i><br>Like</span></a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card" style="width: 23rem;">
-        <img class="card-img-top" src="register.jpg" alt="Card image cap">
-        <div class="p-3 card-body">
-            <div class="row"> 
-                <div class="col-md-6">
-                    <h6 class="card-title">PortalBuku</h5>
-                    <p class="card-text">By 4One</p>
-                </div>
-
-                <div class="col-md-6 text-end">
-                    <a id="heart"><span class="like"><i class="fab fa-gratipay"></i><br>Like</span></a></p>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
     <br><br>
 

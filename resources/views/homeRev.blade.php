@@ -7,10 +7,12 @@
 @section('css')
 <link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="navbar.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 @stop
 
 @section('nav')
-    <li><a class="nav-link scrollto active" href="/home" >Home</a></li>
+    <li><a class="nav-link scrollto active" href="/" >Home</a></li>
     <li><a class="nav-link scrollto" href="/rank">Rank</a></li>
     <li><a class="nav-link scrollto" href="/event">Event</a></li>
 @stop
@@ -73,40 +75,18 @@
                 </div>
 
                 <div class="row justify-content-center">
-
+                    
+                    @foreach ($latest_events as $event)
                     <div class="card my-2" style="width: 16rem;">
-                        <img class="card-img-top" src="register.jpg" alt="Card image cap">
+                        <img class="card-img-top object-fit-cover" src="{{ asset('storage/' . $event->event_picture) }}" alt="Card image cap" style="height: 140px;">
                         <div class="card-body">
                             <a href="/event" class="card-title">
-                                <h6>Pameran Proyek PAD Mahasiswa TRPL 2021</h5>
+                                <h5 style="font-weight: bold">{{ $event->event_name }}</h5>
                             </a>
-                            <p class="card-text">24 Maret - 25 Maret 2023</p>
+                            <p>{{ \Carbon\Carbon::parse($event->submission_start)->format('d F') }} - {{ \Carbon\Carbon::parse($event->submission_end)->format('d F Y') }}</p>
                         </div>
                     </div>
-
-                    <div class="card my-2" style="width: 16rem;">
-                        <img class="card-img-top" src="register.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h6 class="card-title">Pameran Proyek PAD Mahasiswa TRPL 2021</h5>
-                            <p class="card-text">24 Maret - 25 Maret 2023</p>
-                        </div>
-                    </div>
-
-                    <div class="card my-2" style="width: 16rem;">
-                        <img class="card-img-top" src="register.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h6 class="card-title">Pameran Proyek PAD Mahasiswa TRPL 2021</h5>
-                            <p class="card-text">24 Maret - 25 Maret 2023</p>
-                        </div>
-                    </div>
-
-                    <div class="card my-2" style="width: 16rem;">
-                        <img class="card-img-top" src="register.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h6 class="card-title">Pameran Proyek PAD Mahasiswa TRPL 2021</h5>
-                            <p class="card-text">24 Maret - 25 Maret 2023</p>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
 
@@ -170,73 +150,25 @@
                 
                 <div class="row mt-2 justify-content-center">
 
+                    @foreach ($latest_projects as $project)
                     <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="register.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="{{ asset('storage/' . $project->project_picture1) }}" alt="Card image cap">
                         <div class="p-3 card-body">
                             <div class="row"> 
                                 <div class="col-md-6">
                                     <a href="/detailProject" class="card-title">
-                                        <h6 class="card-title">PortalBuku</h6>
+                                        <h5 class="card-title" style="font-weight: bold">{{ $project->project_name }}</h6>
                                     </a>
-                                    <p class="card-text">By 4One</p>
+                                    <p class="card-text">{{ $project->team_name }}</p>
                                 </div>
 
                                 <div class="col-md-6 text-end">
-                                    <a id="heart"><span class="like"><i class="fab fa-gratipay"></i><br>Like</span></a></p>
+                                    <a id="heart"><span class="like"><i class="bi bi-heart"></i><br>{{ $project->votes }}</span></a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="register.jpg" alt="Card image cap">
-                        <div class="p-3 card-body">
-                            <div class="row"> 
-                                <div class="col-md-6">
-                                    <h6 class="card-title">PortalBuku</h6>
-                                    <p class="card-text">By 4One</p>
-                                </div>
-
-                                <div class="col-md-6 text-end">
-                                    <a id="heart"><span class="like"><i class="fab fa-gratipay"></i><br>Like</span></a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="register.jpg" alt="Card image cap">
-                        <div class="p-3 card-body">
-                            <div class="row"> 
-                                <div class="col-md-6">
-                                    <h6 class="card-title">PortalBuku</h6>
-                                    <p class="card-text">By 4One</p>
-                                </div>
-
-                                <div class="col-md-6 text-end">
-                                    <a id="heart"><span class="like"><i class="fab fa-gratipay"></i><br>Like</span></a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="register.jpg" alt="Card image cap">
-                        <div class="p-3 card-body">
-                            <div class="row"> 
-                                <div class="col-md-6">
-                                    <h6 class="card-title">PortalBuku</h6>
-                                    <p class="card-text">By 4One</p>
-                                </div>
-
-                                <div class="col-md-6 text-end">
-                                    <a id="heart"><span class="like"><i class="fab fa-gratipay"></i><br>Like</span></a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
 

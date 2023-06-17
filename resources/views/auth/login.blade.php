@@ -32,6 +32,8 @@
               </div>
               <br>
 
+              <form method="post" action="{{ route('login') }}">
+              @csrf
                 <div class="input-field">
                   <input type="text" class="input" id="email" required autocomplete="off" placeholder="Username">
                   <!-- <label for="email">Email</label> -->
@@ -43,6 +45,8 @@
                 <div class="button">
                   <button type="submit" class="submit" onclick="location.href='home'">Login</button>    
                 </div>
+              </form>
+
                 <div class="signin">
                   <span>Don't have an account? <a href="register">Register Now</a></span>
                 </div>
