@@ -74,7 +74,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                     Events</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $events->count('id') }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -92,7 +92,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     Projects</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">24</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $projects->count('id') }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-solid fa-laptop fa-2x text-gray-300"></i>
@@ -111,7 +111,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                     Users</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $users->count('id') }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-solid fa-user fa-2x text-gray-300"></i>

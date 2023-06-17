@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 
 use Laravel\Socialite\Facades\Socialite;
@@ -61,17 +62,21 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/adminEvents', function () {
-    return view('adminEvents');
-});
+Route::get('/adminDashboard', [AdminController::class, 'index']);
+Route::get('/adminEvents', [AdminController::class, 'events']);
+
+
+// Route::get('/adminEvents', function () {
+//     return view('adminEvents');
+// });
 
 Route::get('/adminApproval', function () {
     return view('adminApproval');
 });
 
-Route::get('/adminDashboard', function () {
-    return view('adminDashboard');
-});
+// Route::get('/adminDashboard', function () {
+//     return view('adminDashboard');
+// });
 
 Route::get('/adminProjects', function () {
     return view('adminProjects');
