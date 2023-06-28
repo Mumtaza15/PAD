@@ -24,15 +24,15 @@
           <div class="col-md-6 right">
             <div class="input-box">
               <header>
-                User Login
+                Admin Login
               </header>
 
-              <div class="px-2">
+              <!-- <div class="px-2">
                 <a href="{{ route('login.google') }}" class="btn btn-primary btn-block d-flex flex-wrap flex-row align-items-center justify-content-center"><img class="rounded me-2" src="https://static.vecteezy.com/system/resources/previews/013/948/549/non_2x/google-logo-on-transparent-white-background-free-vector.jpg" style="height: 25px;"> Sign in with Google</a>
               </div>
-              <br>
+              <br> -->
 
-              <p>*Please sign in using your UGM account.</p>
+              <!-- <p>*Please sign in using your UGM account.</p> -->
 
               <!-- <form method="post" action="{{ route('login') }}">
               @csrf
@@ -50,6 +50,16 @@
               <div class="signin">
                 <span>Don't have an account? <a href="register">Register Now</a></span>
               </div> -->
+
+              <form action="{{ route('check') }}" method="POST">
+                @csrf
+                <input type="password" name="password" placeholder="Masukkan password">
+                <button type="submit">Submit</button>
+            </form>
+
+            
+
+
 
             </div>
 

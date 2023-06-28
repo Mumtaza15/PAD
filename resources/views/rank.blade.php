@@ -5,33 +5,34 @@
 @stop
 
 @section('css')
-<link rel="stylesheet" href="rank.css">
+<!-- <link rel="stylesheet" href="rank.css"> -->
 <link rel="stylesheet" href="navbar.css">
 @stop
 
 @section('nav')
-    <li><a class="nav-link scrollto" href="/home" >Home</a></li>
+    <li><a class="nav-link scrollto" href="/" >Home</a></li>
     <li><a class="nav-link scrollto active" href="/rank">Rank</a></li>
     <li><a class="nav-link scrollto" href="/event">Event</a></li>
 @stop
 
 @section('content')
-
+<link rel="stylesheet" href="rank.css">
     <div class="container d-flex justify-content-center mb-4">
             <div class="input-group-prepend search-title">
-                <label class="input-group-text" for="inputGroupSelect01">Looking for best projects?</label>
+                <label class="py-3 px-3 border shadow-sm" style="background: white; border-radius: 6px 0px 0px 6px;" for="inputGroupSelect01">Looking for best projects?</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01">
-                <option selected>Pameran Proyek PAD Mahasiswa TRPL 2021</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-            <div class="input-group-append">
-                <button class="btn btn-primary">
+
+            <form action="{{ route('rank.search') }}" method="GET">
+                <select class="custom-select py-3 px-1" style="width: 200px;" id="keyword" name="keyword">
+                    @foreach ($events as $event)
+                        <option value="{{ $event->id }}" class="text-capitalize">{{ $event->event_name }}</option>
+                    @endforeach
+                </select>
+                <button type="submit" class="btn btn-primary" style="margin-left: -3px;">
                     <i class="fas fa-search"></i>
                 </button>
-            </div>
+            </form>
+
         <!-- <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Pameran Proyek PAD Mahasiswa TRPL 2021
@@ -58,73 +59,15 @@
                 </tr>
             </thead>
             <tbody>
+                @php($i = 0)
+                @foreach ($results as $result)
                 <tr class="rank1">
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">{{ ++$i }}</th>
+                <td>{{ $result->project_name }}</td>
+                <td>{{ $result->team_name }}</td>
+                <td>{{ $result->votes }}</td>
                 </tr>
-                <tr class="rank2">
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr class="rank3">
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                </tr>
-                
-                <tr>
-                <th scope="row">4</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                </tr>
-
-                <tr>
-                <th scope="row">5</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                </tr>
-
-                <tr>
-                <th scope="row">6</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                </tr>
-
-                <tr>
-                <th scope="row">7</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                </tr>
-
-                <tr>
-                <th scope="row">8</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                </tr>
-
-                <tr>
-                <th scope="row">9</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                </tr>
-
-                <tr>
-                <th scope="row">10</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </section>

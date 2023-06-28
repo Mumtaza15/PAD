@@ -77,43 +77,29 @@
                 </tr>
             </thead>
             <tbody class="text-center">
+                @foreach ($unapproved_projects as $project)
                 <tr>
                 <th scope="row">1</th>
                 <td>
                     <!-- dibuat formatnya begini: https://www.youtube.com/embed/(nama_token) -->
-                    <iframe src="https://www.youtube.com/embed/fKRtnMYMW08"></iframe>
+                    <iframe src="{{ $project->video_link }}"></iframe>
                 </td>
-                <td>PortalBuku</td>
-                <td>4one</td>
-                <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Quod harum officiis commodi nihil, inventore repellat aliquid eius, 
-                    earum repudiandae omnis cumque laboriosam quia quidem ipsam amet dolores! Beatae, est natus.
-                </td>
-                <td><button type="button" class="btn" style="color:white;background-color:#0C003F;">Review</button> <button type="button" class="btn" style="color:white;background-color:#15C0A4;">Accept</button> <button type="button" class="btn btn-danger">Decline</button>
-                </tr>
-
-                <tr>
-                <th scope="row">2</th>
+                <td>{{ $project->project_name }}</td>
+                <td>{{ $project->team_name }}</td>
+                <td>{{ $project->description }}</td>
                 <td>
-                    <!-- dibuat formatnya begini: https://www.youtube.com/embed/(nama_token) -->
-                    <iframe src="https://www.youtube.com/embed/fKRtnMYMW08"></iframe>
-                </td>
-                <td>PortalBuku</td>
-                <td>4one</td>
-                <td><button type="button" class="btn" style="color:white;background-color:#0C003F;">Review</button> <button type="button" class="btn" style="color:white;background-color:#15C0A4;">Accept</button> <button type="button" class="btn btn-danger">Decline</button>
-                </tr>
+                    <button type="button" class="btn" style="color:white;background-color:#0C003F;">Review</button>
+                    
+                    <form action="{{ route('approve', ['id' => $project->id]) }}" method="POST">
+                        @csrf
+                        @method('PUT')
 
-                <tr>
-                <th scope="row">3</th>
-                <td>
-                    <!-- dibuat formatnya begini: https://www.youtube.com/embed/(nama_token) -->
-                    <iframe src="https://www.youtube.com/embed/fKRtnMYMW08"></iframe>
-                </td>
-                <td>PortalBuku</td>
-                <td>4one</td>
-                <td><button type="button" class="btn" style="color:white;background-color:#0C003F;">Review</button> <button type="button" class="btn" style="color:white;background-color:#15C0A4;">Accept</button> <button type="button" class="btn btn-danger">Decline</button>
+                        <button type="submit" class="btn" style="color:white;background-color:#15C0A4;">Accept</button>
+                    </form>
+
+                    <button type="button" class="btn btn-danger">Decline</button>
                 </tr>
-                
+                @endforeach
             </tbody>
         </table>
         </div>

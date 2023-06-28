@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\User;
+
 class Project extends Model
 {
     protected $table = 'projects';
@@ -35,4 +37,18 @@ class Project extends Model
         'project_picture3',
         'approved',
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function events()
+    {
+        return $this->belongsTo(Event::class);
+    }
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class);
+    }
 }

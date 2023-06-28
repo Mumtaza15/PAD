@@ -69,25 +69,24 @@
             <thead class="table-dark text-center">
                 <tr>
                 <th scope="col">No</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
                 <th scope="col">Username</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Edit</th>
+                <th scope="col">Email</th>
+                <!-- <th scope="col">Phone</th> -->
+                <!-- <th scope="col">Edit</th> -->
                 <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody class="text-center">
+                @foreach ($users as $user)
                 <tr>
                 <th scope="row">1</th>
-                <td>Lintang Gemutang</td>
-                <td><input type="email" id="email" name="email" value="yandex@mail.ugm.ac.id" disabled></td>
-                <td>Yandex</td>
-                <td><input type="number" id="quantity" name="quantity" value="082138345696" disabled></td>
-                <td><button class="edit-btn"><a><i class="fas fa-regular fa-pen"></i></a></button></td>
+                <td>{{ $user->username }}</td>
+                <td>{{ $user->email }}</td>
+                <!-- <td><input type="number" id="quantity" name="quantity" value="082138345696" disabled></td> -->
+                <!-- <td><button class="edit-btn"><a><i class="fas fa-regular fa-pen"></i></a></button></td> -->
                 <td><button class="delete-btn"><a><i class="fas fa-regular fa-trash"></i></a></button></td>
                 </tr>
-                
+                @endforeach
             </tbody>
         </table>
         </div>

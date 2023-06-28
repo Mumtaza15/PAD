@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Project;
 use App\Models\Event;
+use App\Models\Vote;
 
 class ProjectController extends Controller
 {
@@ -13,8 +14,25 @@ class ProjectController extends Controller
     {
         $latest_events = Event::latest()->take(4)->get();
         $latest_projects = Project::latest()->take(4)->get();
+        $latest_projects = Project::where('approved', true)->latest()->take(4)->get();
+        $popular_projects = Project::where('approved', true)->orderBy('votes', 'desc')->take(4)->get();
 
-        return view('homeRev', compact('latest_events', 'latest_projects'));
+        return view('homeRev', compact('latest_events', 'latest_projects', 'popular_projects'));
+    }
+
+    // public function rank() {
+    //     $events = Event::all();
+
+    //     return view('rank', compact('events'));
+    // }
+
+    public function search_rank(Request $request) {
+        $events = Event::all();
+        $keyword = $request->keyword;
+
+        $results = Project::where('approved', true)->where('event_id', $keyword)->take(10)->get();
+
+        return view('rank', compact('events', 'results'));
     }
 
     /**
@@ -22,7 +40,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Projects::all();
+        $projects = Project::all();
 
         return view('project', compact('projects'));
     }
@@ -42,6 +60,11 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'project_name' => 'required|string',
+            'description' => 'required',
+        ]);
+
         $project = New Project;
         $project->project_name = $request->project_name;
         $project->event_id = $request->event_id;
@@ -79,9 +102,11 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $project = Project::find($id);
+
+        return view('detailProject', compact('project'));
     }
 
     /**

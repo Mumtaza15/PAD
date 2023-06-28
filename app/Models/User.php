@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Models\Project;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -43,4 +45,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function projects() {
+        return $this->hasMany(Project::class);
+    }
+
+    public function votes() {
+        return $this->belongsToMany(Project::class, 'table_votes', 'user_id', 'project_id');
+    }
+
+    public function vo() {
+        return $this->hasMany(Vote::class);
+    }
 }

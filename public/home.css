@@ -9,7 +9,7 @@ body{
 #hero {
     width: 100%;
     height: calc(100vh - 110px);
-    background: url("register.jpg") top center;
+    background: url("Hero.png") top center;
     background-size: cover;
     position: relative;
   }
@@ -174,7 +174,7 @@ hr.vertical-line {
 .card:hover{
   background: #15C0A4;
   margin-inline: 8px;
-  padding: 0%;
+  /* padding: 0%; */
   color: white;
   box-shadow: 4px 4px 10px 1px rgba(0,0,0,0.2);
 }
@@ -209,7 +209,7 @@ hr.vertical-line {
 }
 
 .img-left{
-  background-image: url("tambah.png");
+  background-image: url("gambar.svg");
   background-position: center;
   background-size: cover;
   border-radius: 10px 0 0 10px;

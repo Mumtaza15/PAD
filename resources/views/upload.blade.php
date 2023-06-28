@@ -9,10 +9,12 @@
 @section('css')
 <link rel="stylesheet" href="upload.css">
 <link rel="stylesheet" href="navbar.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 @stop
 
 @section('nav')
-    <li><a class="nav-link scrollto" href="/home" >Home</a></li>
+    <li><a class="nav-link scrollto" href="/" >Home</a></li>
     <li><a class="nav-link scrollto" href="/rank">Rank</a></li>
     <li><a class="nav-link scrollto" href="/event">Event</a></li>
 @stop
@@ -26,14 +28,15 @@
 @csrf
 
 <div class="wrapper">
-    <div class="form">
+    <div class="form form-group">
        <div class="inputfield">
           <label>Project Name</label>
-          <input type="text" class="input" name="project_name">
+          <input type="text" class="input form-input" id="validationCustom03" name="project_name" required>
+          <span class="text-danger">@error('project_name'){{ $message }}@enderror</span>
        </div>  
         <div class="inputfield">
           <label>Description</label>
-          <textarea class="input" name="description"></textarea>
+          <textarea class="input" name="description" required></textarea>
           <!-- <input type="textarea" class="input"> -->
        </div>
        <div class="inputfield">
@@ -80,7 +83,7 @@
    <div class="form">
       <div class="inputfield">
          <label>Picture 1</label>
-         <input type="file" class="input" name="project_picture1">
+         <input type="file" class="input" name="project_picture1" required data-max-file-size="2M" data-allowed-file-extensions="png jpg jpeg">
       </div> 
       <div class="inputfield">
          <label>Picture 2</label>
@@ -211,11 +214,11 @@
 <center>
 
 </form>
-    
+
 <br>
 
 @stop
 
 @section('js')
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 @stop

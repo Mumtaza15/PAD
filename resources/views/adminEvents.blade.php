@@ -72,51 +72,31 @@
                 <th scope="col">Picture</th>
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
-                <th scope="col">Start</th>
-                <th scope="col">End</th>
                 <th scope="col">Status</th>
+                <th scope="col">Submission Start</th>
+                <th scope="col">Submission End</th>
+                <th scope="col">Vote Start</th>
+                <th scope="col">Vote End</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody class="text-center">
+                @foreach ($events as $event)
                 <tr>
-                <th scope="row">1</th>
-                <td><img src="register.jpg" width="250" height="120"></td>
-                <td>PortalBuku</td>
-                <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Quod harum officiis commodi nihil, inventore repellat aliquid eius, 
-                    earum repudiandae omnis cumque laboriosam quia quidem ipsam amet dolores! Beatae, est natus.
-                </td>
-                <td><input type="date" value="2017-06-01" disabled/></td>
-                <td><input type="date" value="2018-06-01" disabled/></td>
-                <td><button type="button" class="btn" style="color:white;background-color:#0C003F;">Review</button></td>
-                <td><button class="edit-btn"><a><i class="fas fa-regular fa-pen"></i></a></button></td>
-                <td><button class="delete-btn"><a><i class="fas fa-regular fa-trash"></i></a></button></td>
+                    <th scope="row">1</th>
+                    <td><img src="{{ asset('storage/' . $event->event_picture) }}" alt="" style="width: 200px;"></td>
+                    <td>{{ $event->event_name }}</td>
+                    <td>{{ $event->description }}</td>
+                    <td>{{ $event->status_event }}</td>
+                    <td>{{ $event->submission_start }}</td>
+                    <td>{{ $event->submission_end }}</td>
+                    <td>{{ $event->vote_start }}</td>
+                    <td>{{ $event->vote_end }}</td>
+                    <td><button class="edit-btn"><a><i class="fas fa-regular fa-pen"></i></a></button></td>
+                    <td><button class="delete-btn"><a><i class="fas fa-regular fa-trash"></i></a></button></td>
                 </tr>
-
-                <tr>
-                <th scope="row">2</th>
-                <td>
-                    <!-- dibuat formatnya begini: https://www.youtube.com/embed/(nama_token) -->
-                    <iframe src="https://www.youtube.com/embed/fKRtnMYMW08"></iframe>
-                </td>
-                <td>PortalBuku</td>
-                <td>4one</td>
-                <td><button type="button" class="btn" style="color:white;background-color:#0C003F;">Review</button> <button type="button" class="btn" style="color:white;background-color:#15C0A4;">Accept</button> <button type="button" class="btn btn-danger">Decline</button>
-                </tr>
-
-                <tr>
-                <th scope="row">3</th>
-                <td>
-                    <!-- dibuat formatnya begini: https://www.youtube.com/embed/(nama_token) -->
-                    <iframe src="https://www.youtube.com/embed/fKRtnMYMW08"></iframe>
-                </td>
-                <td>PortalBuku</td>
-                <td>4one</td>
-                <td><button type="button" class="btn" style="color:white;background-color:#0C003F;">Review</button> <button type="button" class="btn" style="color:white;background-color:#15C0A4;">Accept</button> <button type="button" class="btn btn-danger">Decline</button>
-                </tr>
-                
+                @endforeach
             </tbody>
         </table>
         </div>

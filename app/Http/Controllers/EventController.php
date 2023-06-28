@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Event;
+use App\Models\Project;
 
 class EventController extends Controller
 {
@@ -13,7 +14,14 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+        $events = Event::where('status_event', 'active')->orWhere('status_event', 'finished')->get();
+
+        return view('event', compact('events'));
+    }
+
+    public function search_event(Request $request) {
+        $keyword = $request->keyword;
+        $events = Event::where('event_name', 'LIKE', "%$keyword%")->where(function ($query) {$query->where('status_event', 'active')->orWhere('status_event', 'finished');})->get();
 
         return view('event', compact('events'));
     }
@@ -37,9 +45,12 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $event = Event::find($id);
+        $projects = Project::where('event_id', $id)->where('approved', true)->get();
+
+        return view('detailEvent', compact('event', 'projects'));
     }
 
     /**

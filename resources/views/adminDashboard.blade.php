@@ -92,7 +92,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     Projects</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $projects->count('id') }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $projects->where('approved', true)->count('id') }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-solid fa-laptop fa-2x text-gray-300"></i>
@@ -132,7 +132,7 @@
                     <!-- Card Header - Dropdown -->
                     <div
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary" style="color:white;">Approval Overview</h6>
+                        <h6 class="m-0 font-weight-bold text-primary" style="color: white;">Approval Overview</h6>
                         <!-- <div class="dropdown no-arrow">
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -148,28 +148,36 @@
                             </div>
                         </div> -->
                     </div>
+
                     <!-- Card Body -->
+                    @foreach ($unapproved_projects as $project)
                     <div class="card-body">
                         <div class="card mb-2">
                             <div class="row m-2">
                                 <div class="card-body col-md-8">
-                                    <h3>PortalBuku</h3>
-                                    <span>by <a>4one</a>
+                                    <h3>{{ $project->project_name }}</h3>
+                                    <span>by <a>{{ $project->team_name }}</a>
                                     </span>
                                 </div>
                                 <div class="card-body col-md-4 d-flex flex-row-reverse">
                                     <center>
-                                    <br>
                                     <!-- <a href="#" class="accept">Accept <span class="fa fa-check"></span></a> -->
-                                    <a href="#" class="accept">Accept</a>
-                                    <a href="#" class="deny">Decline</a>
+                                    <form action="{{ route('approve', ['id' => $project->id]) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+
+                                        <button type="submit" class="accept" style="color: white; background-color: #15C0A4;">Accept</button>
+                                    </form>
+
+                                    <button class="deny">Decline</button>
+                                    <!-- <a href="#" class="accept">Accept</a> -->
+                                    <!-- <a href="#" class="deny">Decline</a> -->
                                     </center>
                                 </div>
                             </div>
                         </div>
-
-                        
                     </div>
+                    @endforeach
                 </div>
             </div>
     </div>

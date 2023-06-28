@@ -80,66 +80,53 @@
                 </tr>
             </thead>
             <tbody class="text-center">
+                @foreach ($approved_projects as $project)
+                @php($i = $approved_projects->firstItem() + $loop->index)
                 <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{ $i }}</th>
                 <td>
                     <!-- dibuat formatnya begini: https://www.youtube.com/embed/(nama_token) -->
-                    <iframe src="https://www.youtube.com/embed/fKRtnMYMW08"></iframe>
+                    <iframe src="{{ $project->video_link }}"></iframe>
                 </td>
-                <td>PortalBuku</td>
-                <td>4One</td>
+                <td>{{ $project->project_name }}</td>
+                <td>{{ $project->team_name }}</td>
                 <td>
                     <ul>
-                        <li>Ahmad</li>
-                        <li>Isnani</li>
-                        <li>Nugraha</li>
+                        <li>{{ $project->member1_name }}</li>
+                        <li>{{ $project->member2_name }}</li>
+                        <li>{{ $project->member3_name }}</li>
+                        <li>{{ $project->member4_name }}</li>
+                        <li>{{ $project->member5_name }}</li>
                     </ul>
                 </td>
-                <td width="300" height="100">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Quod harum officiis commodi nihil, inventore repellat aliquid eius, 
-                    earum repudiandae omnis cumque laboriosam quia quidem ipsam amet dolores! Beatae, est natus.
-                </td>
+                <td width="300" height="100">{{ $project->description }}</td>
                 <td>
                     <span>
-                        <img src="login.png" class="rounded-circle mt-2" width="48px" height="48px"/>
+                        <img src="{{ asset('storage/' . $project->member1_photo) }}" class="rounded-circle mt-2" width="48px" height="48px"/>
                     </span>
                     <br>
                     <span>
-                        <img src="login.png" class="rounded-circle mt-2" width="48px" height="48px"/>
+                        <img src="{{ asset('storage/' . $project->member2_photo) }}" class="rounded-circle mt-2" width="48px" height="48px"/>
                     </span>
                     <br>
                     <span>
-                        <img src="login.png" class="rounded-circle mt-2" width="48px" height="48px"/>
+                        <img src="{{ asset('storage/' . $project->member3_photo) }}" class="rounded-circle mt-2" width="48px" height="48px"/>
+                    </span>
+                    <span>
+                        <img src="{{ asset('storage/' . $project->member4_photo) }}" class="rounded-circle mt-2" width="48px" height="48px"/>
+                    </span>
+                    <span>
+                        <img src="{{ asset('storage/' . $project->member5_photo) }}" class="rounded-circle mt-2" width="48px" height="48px"/>
                     </span>
                 </td>
                 <td><button class="edit-btn"><a><i class="fas fa-regular fa-pen"></i></a></button></td>
                 <td><button class="delete-btn"><a><i class="fas fa-regular fa-trash"></i></a></button></td>
                 </tr>
-
-                <tr>
-                <th scope="row">2</th>
-                <td>
-                    <!-- dibuat formatnya begini: https://www.youtube.com/embed/(nama_token) -->
-                    <iframe src="https://www.youtube.com/embed/fKRtnMYMW08"></iframe>
-                </td>
-                <td>PortalBuku</td>
-                <td>4one</td>
-                <td><button type="button" class="btn" style="color:white;background-color:#0C003F;">Review</button> <button type="button" class="btn" style="color:white;background-color:#15C0A4;">Accept</button> <button type="button" class="btn btn-danger">Decline</button>
-                </tr>
-
-                <tr>
-                <th scope="row">3</th>
-                <td>
-                    <!-- dibuat formatnya begini: https://www.youtube.com/embed/(nama_token) -->
-                    <iframe src="https://www.youtube.com/embed/fKRtnMYMW08"></iframe>
-                </td>
-                <td>PortalBuku</td>
-                <td>4one</td>
-                <td><button type="button" class="btn" style="color:white;background-color:#0C003F;">Review</button> <button type="button" class="btn" style="color:white;background-color:#15C0A4;">Accept</button> <button type="button" class="btn btn-danger">Decline</button>
-                </tr>
-                
+                @endforeach
             </tbody>
         </table>
+
+        {{ $approved_projects->links() }}
         </div>
         </div>
 

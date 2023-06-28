@@ -66,31 +66,45 @@
         <!-- Content Row -->
         <div class="m-4">
         <!-- <div class="row m-4"> -->
-        <form>
+        <form action="{{ route('event.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
 
             <div class="form-group row">
                 <label for="inputName" class="col-sm-6 col-form-label">Event Name</label>
                 <div class="col-sm-6">
-                <input type="text" class="form-control" id="eventName" placeholder="Insert event name...">
+                <input type="text" class="form-control" name="event_name" placeholder="Insert event name here">
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="exampleFormControlTextarea1" class="col-sm-6 col-form-label">Event Description</label>
+                <label for="inputDescription" class="col-sm-6 col-form-label">Description</label>
                 <div class="col-sm-6">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Insert event description..."></textarea>
+                <textarea name="description" rows="4" class="form-control">Insert event description here</textarea>
                 </div>
             </div>
+
+            <!-- <div class="form-group row">
+                <label for="exampleFormControlTextarea1" class="col-sm-6 col-form-label">Status</label>
+                <div class="col-sm-6">
+                    <div class="custom_select">
+                        <select name="status_event" style="padding: 6px;" disabled>
+                            <option value="submission" selected>Submission</option>
+                            <option value="active">Active</option>
+                            <option value="finished">Finished</option>
+                        </select>
+                    </div>
+                </div>
+            </div> -->
 
             <div class="form-group row">
                 <label for="inputDate" class="col-sm-6 col-form-label">Submission Dates</label>
 
                 <div class="col-sm-3">
-                <input required="" type="text" class="form-control" placeholder="Insert start date" onfocus="(this.type='date')"/>
+                <input name="submission_start" required="" type="datetime-local" class="form-control" placeholder="Insert start date" onfocus="(this.type='datetime-local')"/>
                 </div>
 
                 <div class="col-sm-3">
-                <input required="" type="text" class="form-control" placeholder="Insert end date" onfocus="(this.type='date')"/>
+                <input name="submission_end" required="" type="datetime-local" class="form-control" placeholder="Insert end date" onfocus="(this.type='datetime-local')"/>
                 </div>
             </div>
 
@@ -98,28 +112,29 @@
                 <label for="inputDate" class="col-sm-6 col-form-label">Event Dates</label>
 
                 <div class="col-sm-3">
-                <input required="" type="text" class="form-control" placeholder="Insert start date" onfocus="(this.type='date')"/>
+                <input name="vote_start" required="" type="date" class="form-control" placeholder="Insert start date" onfocus="(this.type='date')"/>
                 </div>
 
                 <div class="col-sm-3">
-                <input required="" type="text" class="form-control" placeholder="Insert end date" onfocus="(this.type='date')"/>
+                <input name="vote_end" required="" type="date" class="form-control" placeholder="Insert end date" onfocus="(this.type='date')"/>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="inputPicture" class="col-sm-6 col-form-label">Event Picture</label>
                 <div class="col-sm-6 mb-3">
-                <input class="form-control form-control-sm" id="formFileSm" type="file">
+                    <input class="form-control form-control-sm" name="event_picture" type="file">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-6 col-form-label"></label>
+                <div class="col-sm-6 mb-3 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-sm btn-primary shadow-sm"> Add</button>
                 </div>
             </div>
             
         </form>
-        </div>
-
-        <div class="d-sm-flex mb-4 pull-right justify-content-end">
-            <!-- <h1 class="h3 mb-0 text-gray-800">Events</h1> -->
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm "><i
-                    class="fas fa-download fa-sm text-white-50"></i> + Add</a>
         </div>
 
     </div>

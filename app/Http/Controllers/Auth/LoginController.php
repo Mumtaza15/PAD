@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
 
 use App\Models\User;
+use App\Models\Admin;
 
 use illuminate\Support\Facades\Auth;
 
@@ -75,4 +76,6 @@ class LoginController extends Controller
 
         Auth::login($user);
     }
+
+    
 }
